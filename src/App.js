@@ -4,9 +4,20 @@ const App = () => {
   const [numbers, setNumbers] = useState([5, 10, 15, 20, 25]);
 
   const processNumbers = (arr) => {
+    /* Unoptimized code 
+    
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+          processed.push(arr[i] * arr[j]);
+        }
+      }
+    
+    */
+
+    // Optimized code start
     let processed = [];
     let n = arr.length;
-    // Optimized code start
+
     for (let i = 0; i < n * n; i++) {
       let j = Math.floor(i / n);
       let k = i % n;
